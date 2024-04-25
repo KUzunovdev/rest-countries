@@ -5,6 +5,8 @@ import styles from '../styles/HomePage.module.scss';
 import SearchBar from '../components/SearchBar';
 import RegionFilter from '../components/RegionFilter';
 import { useState } from "react";
+import Header from "../components/Header";
+import Layout from "../components/Layout";
 
 const HomePage = ({ countries }) => {
 
@@ -20,27 +22,22 @@ const HomePage = ({ countries }) => {
 
   return (
 
-    <>
-    <div className="header">
-      <h1>Where in the world</h1>
-      <p>Dark mode toggle</p>
-    </div>
+    <Layout title="Rest Countries">
+      <div className="filters">
+        <SearchBar onSearch={setSearchQuery} />
+        <RegionFilter onFilter={setSelectedRegion} />
+      </div>
 
-    <div className="filters">
-      <SearchBar onSearch={setSearchQuery} />
-      <RegionFilter onFilter={setSelectedRegion} />
-    </div>
-
-    <div className={styles['countries-grid']}>
-    {filteredCountries.length > 0 ? (
-          filteredCountries.map((country) => (
-            <CountryCard key={country.cca3} country={country} />
-          ))
-        ) : (
-          <p>No countries found.</p>
-        )}
-    </div>
-    </>
+      <div className={styles['countries-grid']}>
+      {filteredCountries.length > 0 ? (
+            filteredCountries.map((country) => (
+              <CountryCard key={country.cca3} country={country} />
+            ))
+          ) : (
+            <p>No countries found.</p>
+          )}
+      </div>
+    </Layout>
   );
 };
 

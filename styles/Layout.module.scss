@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@import 'variable.scss';
+
+body {
+    font-family: $font-family;
+    font-weight: $font-weight-normal;
+    background-color: $color-very-light-gray;
+    color: $color-very-dark-blue-text;
+  }
+  
+  [data-theme='dark'] {
+    body {
+      background-color: $color-very-dark-blue;
+      color: $color-white;
+    }
+  }

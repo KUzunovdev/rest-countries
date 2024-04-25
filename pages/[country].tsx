@@ -3,6 +3,7 @@ import { GetServerSideProps } from 'next';
 import { fetchCountryDetailsByName, fetchCountryCodeMapping } from '../utils/api'; 
 import CountryDetail from '../components/CountryDetail';
 import { Country } from '../interfaces/index';
+import Layout from '../components/Layout';
 
 
 interface CountryDetailPageProps {
@@ -13,7 +14,11 @@ interface CountryDetailPageProps {
 
 
 const CountryDetailPage: React.FC<CountryDetailPageProps> = ({ country, countryCodeMapping }) => {
-  return <CountryDetail country={country} countryCodeMapping={countryCodeMapping} />;
+  return (
+  <Layout title={`${country.name.common} | Rest Countries`}>
+    <CountryDetail country={country} countryCodeMapping={countryCodeMapping} />;
+  </Layout>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

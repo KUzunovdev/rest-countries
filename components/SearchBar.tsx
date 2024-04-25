@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -6,12 +8,15 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   return (
+    <div className='search-bar'> 
+    <FontAwesomeIcon icon={faSearch} />
     <input
       type="text"
       placeholder="Search for a country..."
       onChange={(e) => onSearch(e.target.value)}
       className="search-input"
     />
+    </div>
   );
 };
 
