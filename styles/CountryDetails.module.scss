@@ -9,6 +9,12 @@
    padding: 0 8rem;
     color: $color-very-dark-blue-text;
     margin-top: 5rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        grid-gap: 2rem;
+    }
 }
 
 .country-flag{

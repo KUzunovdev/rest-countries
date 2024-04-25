@@ -9,6 +9,11 @@
     color: $color-very-dark-blue-text;
     box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.1);
     margin-bottom: 3rem;
+    font-family: $font-family;
+
+    @media (max-width: 768px) {
+        padding: .5rem 1rem;
+    }
     
     h1 {
         font-size: 1.5rem;

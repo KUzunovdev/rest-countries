@@ -26,4 +26,16 @@
       }
     }
   }
+
+
+  @media (max-width: 768px) {
+    
+    .search-bar, .region-filter {
+      width: 90%; 
+     
+    }
   
+    .search-input {
+      min-width: unset; 
+    }
+  }

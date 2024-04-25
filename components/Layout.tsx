@@ -21,7 +21,9 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     <header>
       <Header />
     </header>
+    <main className={styles['main-content']}>
     {children}
+    </main>
     <footer>
     </footer>
     </ThemeProvider>
