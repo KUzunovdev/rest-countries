@@ -1,17 +1,22 @@
-import React from "react";
+import React from 'react';
 
+interface RegionFilterProps {
+  onFilter: (region: string) => void;
+}
 
-export const RegionFilter = () => {
-    return (
-        <div>
-        <select>
-            <option value="">Filter by Region</option>
-            <option value="Africa">Africa</option>
-            <option value="Americas">Americas</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-        </select>
-        </div>
-    );
-    };
+const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']; 
+
+const RegionFilter: React.FC<RegionFilterProps> = ({ onFilter }) => {
+  return (
+    <select onChange={(e) => onFilter(e.target.value)} defaultValue="">
+      <option value="">Filter by Region</option>
+      {regions.map((region) => (
+        <option key={region} value={region}>
+          {region}
+        </option>
+      ))}
+    </select>
+  );
+};
+
+export default RegionFilter;

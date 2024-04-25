@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/CountryCard.module.scss";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 
 interface CountryCardProps {
@@ -29,6 +30,7 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
 
 
     return (
+      <Link href={`/${country.name.common}`} passHref>
       <div className={styles['country-card']}>
         <img className={styles['country-flag']} src={country.flags.svg} alt={`Flag of ${country.name.common}`} />
         <h3 className={styles['country-name']}>{country.name.common}</h3>
@@ -36,6 +38,7 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
         <p className={styles['country-detail']}>Region: {country.region}</p>
         <p className={styles['country-detail']}>Capital: {country.capital}</p>
       </div>
+      </Link>
     );
   };
   
