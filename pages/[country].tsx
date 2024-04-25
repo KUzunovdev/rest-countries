@@ -4,6 +4,7 @@ import { fetchCountryDetailsByName, fetchCountryCodeMapping } from '../utils/api
 import CountryDetail from '../components/CountryDetail';
 import { Country } from '../interfaces/index';
 import Layout from '../components/Layout';
+import BackButton from '../components/BackButton';
 
 
 interface CountryDetailPageProps {
@@ -16,6 +17,7 @@ interface CountryDetailPageProps {
 const CountryDetailPage: React.FC<CountryDetailPageProps> = ({ country, countryCodeMapping }) => {
   return (
   <Layout title={`${country.name.common} | Rest Countries`}>
+    <BackButton />
     <CountryDetail country={country} countryCodeMapping={countryCodeMapping} />;
   </Layout>
   );
