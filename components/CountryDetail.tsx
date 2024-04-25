@@ -1,14 +1,21 @@
 import React from 'react';
 import { Country } from '../interfaces/index';
+import styles from '../styles/CountryDetails.module.scss';
+import Link from 'next/link';
 
   interface CountryDetailsProps {
     country: Country;
+    countryCodeMapping: { [key: string]: string };
   }
 
 
-const CountryDetails: React.FC<CountryDetailsProps> = ({ country }) => {
+const CountryDetails: React.FC<CountryDetailsProps> = ({ country, countryCodeMapping  }) => {
  
 const { name, flags, population, region, subregion, capital, tld, currencies, languages, borders } = country;
+
+
+
+
 
 const formatCurrencies = (currencies: { name: string }[]) => {
     return Object.values(currencies).map((currency) => currency.name).join(', ');
@@ -35,9 +42,21 @@ const formatLanguages = (languages) => {
       {borders && (
         <div>
           <h3>Border Countries:</h3>
-          {borders.map((border) => (
-            <span key={border}>{border}</span> 
-          ))}
+          {borders && (
+        <div className={styles.borderCountries}>
+          <h3>Border Countries:</h3>
+          <div className={styles.bordersList}>
+          {borders.map((borderCode) => {
+              const borderName = countryCodeMapping[borderCode]; 
+              return (
+                <Link key={borderCode} href={`/${borderName.replace(/ /g, '%20')}`} passHref>
+                  <button className={styles.borderCountry}>{borderName}</button>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
         </div>
       )}
     </div>
