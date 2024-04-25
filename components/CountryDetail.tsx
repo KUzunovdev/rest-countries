@@ -26,31 +26,37 @@ const formatLanguages = (languages) => {
 };
 
   return (
-    <div>
-      <img src={flags.svg} alt={`Flag of ${name.common}`} />
+    <div className={styles['country-detail-container']}> 
+      <img src={flags.svg} alt={`Flag of ${name.common}`} className={styles['country-flag']} />
+      
+    <div className={styles['country-info']}>
       <h1>{name.common}</h1>
-    <div>
-        <p>Native Name: {(Object.values(name.nativeName)[0] as any).common}</p>
-        <p>Population: {population.toLocaleString()}</p>
-        <p>Region: {region}</p>
-        <p>Sub Region: {subregion}</p>
-        <p>Capital: {capital.join(', ')}</p>
-        <p>Top Level Domain: {tld.join(', ')}</p>
-        <p>Currencies: {formatCurrencies(Object.values(currencies))}</p>
-        <p>Languages: {formatLanguages(languages)}</p>
-    </div>
+        <div className={styles['country-info-wrapper']}>
+
+          <div>
+            <p><strong>Native Name:</strong> {(Object.values(name.nativeName)[0] as any).common}</p>
+            <p><strong>Population:</strong> {population.toLocaleString()}</p>
+            <p><strong>Region:</strong> {region}</p>
+            <p><strong>Sub Region:</strong> {subregion}</p>
+            <p><strong>Capital:</strong> {capital.join(', ')}</p>
+          </div>
+          <div>
+            <p><strong>Top Level Domain:</strong> {tld.join(', ')}</p>
+            <p><strong>Currencies:</strong> {formatCurrencies(Object.values(currencies))}</p>
+            <p><strong>Languages:</strong> {formatLanguages(languages)}</p>
+          </div>
+        </div>
       {borders && (
         <div>
-          <h3>Border Countries:</h3>
           {borders && (
-        <div className={styles.borderCountries}>
+        <div className={styles['border-countries']}>
           <h3>Border Countries:</h3>
-          <div className={styles.bordersList}>
+          <div className={styles['border-list']}>
           {borders.map((borderCode) => {
               const borderName = countryCodeMapping[borderCode]; 
               return (
                 <Link key={borderCode} href={`/${borderName.replace(/ /g, '%20')}`} passHref>
-                  <button className={styles.borderCountry}>{borderName}</button>
+                  <button className={styles['border-country']}>{borderName}</button>
                 </Link>
               );
             })}
@@ -59,6 +65,7 @@ const formatLanguages = (languages) => {
       )}
         </div>
       )}
+      </div>
     </div>
   );
 };
