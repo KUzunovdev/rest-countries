@@ -5,7 +5,6 @@ import styles from '../styles/HomePage.module.scss';
 import SearchBar from '../components/SearchBar';
 import RegionFilter from '../components/RegionFilter';
 import { useState } from "react";
-import Header from "../components/Header";
 import Layout from "../components/Layout";
 
 const HomePage = ({ countries }) => {
@@ -23,7 +22,7 @@ const HomePage = ({ countries }) => {
   return (
 
     <Layout title="Rest Countries">
-      <div className="filters">
+      <div className={styles['countries-filter']}>
         <SearchBar onSearch={setSearchQuery} />
         <RegionFilter onFilter={setSelectedRegion} />
       </div>

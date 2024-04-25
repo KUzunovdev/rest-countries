@@ -1,0 +1,29 @@
+@import 'variables.scss';
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: $color-white;
+    border-radius: 5px;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.05);
+    padding: .5rem 1rem;
+    
+    .search-icon {
+      color: $color-dark-gray;
+      margin: 0rem 1rem;
+    }
+    
+    .search-input {
+      border: none;
+      outline: none;
+      min-width: 20rem;
+      font-size: 1rem;
+      color: $color-dark-gray;
+      padding: 0.5rem;
+      
+      &::placeholder {
+        color: $color-dark-gray;
+      }
+    }
+  }
+  
