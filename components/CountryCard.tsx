@@ -30,15 +30,20 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
 
 
     return (
-      <Link href={`/${country.name.common}`} passHref>
+      <Link href={`/${country.name.common}`} passHref className={styles['link']}>
       <div className={styles['country-card']}>
-        <img className={styles['country-flag']} src={country.flags.svg} alt={`Flag of ${country.name.common}`} />
-        <h3 className={styles['country-name']}>{country.name.common}</h3>
-        <p className={styles['country-detail']}>Population: {formattedPopulation}</p>
-        <p className={styles['country-detail']}>Region: {country.region}</p>
-        <p className={styles['country-detail']}>Capital: {country.capital}</p>
+        <div className={styles['country-flag-container']}>
+          <img className={styles['country-flag']} src={country.flags.svg} alt={`Flag of ${country.name.common}`} />
+        </div>
+        <div className={styles['country-info-container']}>
+          <h3 className={styles['country-name']}>{country.name.common}</h3>
+          <p className={styles['country-detail']}>< strong>Population:</strong>{formattedPopulation}</p>
+          <p className={styles['country-detail']}><span className={styles['country-detail-bold']} >Region: </span>{country.region}</p>
+          <p className={styles['country-detail']}><span className={styles['country-detail-bold']} >Capital: </span>{country.capital}</p>
+        </div>
       </div>
-      </Link>
+    </Link>
+    
     );
   };
   

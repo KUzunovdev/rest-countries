@@ -1,27 +1,59 @@
 @import './variables.scss';
 
+
+.link{
+  text-decoration: none;
+  color: $color-very-dark-blue-text;
+}
+
 .country-card {
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin: 16px;
-    width: 250px; /* or any other fixed width */
-  }
+    width: 250px; 
+    text-decoration: none;
+    cursor: pointer; 
+    transition: transform 0.2s ease-in-out; 
+
+    &:hover {
+      transform: translateY(-5px); 
+    }
+}
   
-  .country-flag {
+.country-flag-container {
     width: 100%;
-    height: auto;
-    display: block; /* to remove bottom space under the image */
-  }
-  
-  .country-name {
+    height: 150px; 
+    background-size: cover; 
+    background-position: center; 
+}
+
+.country-info-container {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+
+.country-flag {
+    width: 100%;
+    height: 100%; 
+    display: block; 
+    object-fit: cover; 
+}
+
+.country-name {
     font-size: 18px;
     margin: 16px;
-  }
-  
-  .country-detail {
+    font-weight: $font-weight-bold; 
+}
+
+.country-detail {
     font-size: 16px;
     margin: 0 16px 8px 16px;
-  }
-  
+
+    &-bold{
+      font-weight:$font-weight-normal ;
+    }
+}
