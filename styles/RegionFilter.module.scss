@@ -1,0 +1,42 @@
+@import 'variables';
+
+.region-filter {
+    position: relative;
+    width: 150px;
+    
+    .selected-region {
+        padding: 1rem;
+        background-color: $color-white;
+        border-radius: 5px;
+        box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+      }
+
+      .arrow{
+        position: absolute;
+        right: 0;
+        margin-right: 1rem;
+      }
+    
+      .region-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: $color-white;
+        box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.05);
+        border-radius: 5px;
+        // margin-top: 0.5rem;
+        z-index: 1000;
+      }
+   
+    
+      .region-item {
+        padding: .5rem;
+        cursor: pointer;
+        &:hover {
+          background-color: $color-dark-gray; 
+        }
+    }
+  }
+  
