@@ -1,0 +1,25 @@
+.country-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 16px;
+    width: 250px; /* or any other fixed width */
+  }
+  
+  .country-flag {
+    width: 100%;
+    height: auto;
+    display: block; /* to remove bottom space under the image */
+  }
+  
+  .country-name {
+    font-size: 18px;
+    margin: 16px;
+  }
+  
+  .country-detail {
+    font-size: 16px;
+    margin: 0 16px 8px 16px;
+  }
+  
