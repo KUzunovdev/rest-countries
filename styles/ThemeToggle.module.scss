@@ -1,0 +1,28 @@
+@import './variables.scss';
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: $color-very-dark-blue-text ; 
+    font: inherit; 
+    transition: color 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    span {
+        margin-left: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+ 
+    @media (max-width: 768px) {
+        span {
+            display: none;
+        }
+    }
+}
