@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../styles/CountryCard.module.scss";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 
 

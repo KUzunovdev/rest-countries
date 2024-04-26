@@ -18,7 +18,7 @@ const CountryDetailPage: React.FC<CountryDetailPageProps> = ({ country, countryC
   return (
   <Layout title={`${country.name.common} | Rest Countries`}>
     <BackButton />
-    <CountryDetail country={country} countryCodeMapping={countryCodeMapping} />;
+    <CountryDetail country={country} countryCodeMapping={countryCodeMapping} />
   </Layout>
   );
 };

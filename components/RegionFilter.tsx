@@ -1,15 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../styles/RegionFilter.module.scss';
 
-
 interface RegionFilterProps {
   onFilter: (region: string) => void;
 }
 
-const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']; 
+const regions = ['Filter by Region', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 const RegionFilter: React.FC<RegionFilterProps> = ({ onFilter }) => {
-
   const [isOpen, setIsOpen] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState('Filter by Region');
   const dropdownRef = useRef(null);
@@ -27,9 +25,9 @@ const RegionFilter: React.FC<RegionFilterProps> = ({ onFilter }) => {
     };
   }, []);
 
-  const handleSelectRegion = (region) => {
+  const handleSelectRegion = (region: string) => {
     setSelectedRegion(region);
-    onFilter(region);
+    onFilter(region === 'Filter by Region' ? '' : region);
     setIsOpen(false);
   };
 
@@ -44,7 +42,7 @@ const RegionFilter: React.FC<RegionFilterProps> = ({ onFilter }) => {
           {regions.map((region) => (
             <div
               key={region}
-              className={styles['region-item']}
+              className={`${styles['region-item']} ${region === selectedRegion ? styles['selected'] : ''}`}
               onClick={() => handleSelectRegion(region)}
             >
               {region}
