@@ -39,3 +39,23 @@
       min-width: unset; 
     }
   }
+
+  [data-theme='dark'] {
+    .search-bar {
+      background-color: $color-dark-blue;
+      color: $color-white;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .search-icon {
+      color: $color-white;
+    }
+    
+    .search-input {
+      background-color: $color-dark-blue ;
+      color: $color-dark-gray;
+      &::placeholder {
+        color: $color-dark-gray;
+      }
+    }
+  }

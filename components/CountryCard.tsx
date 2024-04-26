@@ -37,9 +37,9 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
         </div>
         <div className={styles['country-info-container']}>
           <h3 className={styles['country-name']}>{country.name.common}</h3>
-          <p className={styles['country-detail']}><strong>Population:</strong>{formattedPopulation}</p>
-          <p className={styles['country-detail']}><strong>Region:</strong>{country.region}</p>
-          <p className={styles['country-detail']}><strong>Capital:</strong>{country.capital}</p>
+          <p className={styles['country-detail']}><strong className={styles['strong']}>Population:</strong>{formattedPopulation}</p>
+          <p className={styles['country-detail']}><strong className={styles['strong']}>Region:</strong>{country.region}</p>
+          <p className={styles['country-detail']}><strong className={styles['strong']}>Capital:</strong>{country.capital}</p>
         </div>
       </div>
     </Link>

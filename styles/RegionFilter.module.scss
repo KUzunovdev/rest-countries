@@ -2,7 +2,7 @@
 
 .region-filter {
     position: relative;
-    width: 150px;
+    width: 180px;
     
     .selected-region {
         padding: 1rem;
@@ -39,4 +39,16 @@
         }
     }
   }
-  
+  [data-theme='dark'] {
+   .selected-region {
+        background-color: $color-dark-blue;
+        color: $color-white;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .region-list {
+        background-color: $color-dark-blue;
+        color: $color-white;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  }

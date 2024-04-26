@@ -53,7 +53,28 @@
     font-size: 16px;
     margin: 0 16px 8px 16px;
 
-    &-bold{
-      font-weight:$font-weight-normal ;
+}
+
+.strong{
+  font-weight: $font-weight-normal; 
+
+}
+
+[data-theme='dark'] {
+    .country-card {
+        background: $color-dark-blue;
+        color: $color-white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .country-name {
+        color: $color-white;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .country-detail {
+        color: $color-white;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 }

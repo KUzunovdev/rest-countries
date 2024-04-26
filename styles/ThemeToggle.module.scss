@@ -26,3 +26,9 @@
         }
     }
 }
+
+[data-theme='dark'] {
+    .theme-toggle {
+        color: $color-white;
+    }
+}

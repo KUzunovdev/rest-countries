@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
-@import 'variables.scss';
+@import "variables.scss";
 
-.main-content {
-    font-family: $font-family;
-    font-weight: $font-weight-normal;
-    background-color: $color-very-light-gray;
-    color: $color-very-dark-blue-text;
-  }
+.main{
+    padding-top: 3rem;
+}

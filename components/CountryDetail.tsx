@@ -34,23 +34,23 @@ const formatLanguages = (languages) => {
         <div className={styles['country-info-wrapper']}>
 
           <div>
-            <p><strong>Native Name:</strong> {(Object.values(name.nativeName)[0] as any).common}</p>
-            <p><strong>Population:</strong> {population.toLocaleString()}</p>
-            <p><strong>Region:</strong> {region}</p>
-            <p><strong>Sub Region:</strong> {subregion}</p>
-            <p><strong>Capital:</strong> {capital.join(', ')}</p>
+            <p><strong className={styles['strong']}>Native Name:</strong> {(Object.values(name.nativeName)[0] as any).common}</p>
+            <p><strong className={styles['strong']}>Population:</strong> {population.toLocaleString()}</p>
+            <p><strong className={styles['strong']}>Region:</strong> {region}</p>
+            <p><strong className={styles['strong']}>Sub Region:</strong> {subregion}</p>
+            <p><strong className={styles['strong']}>Capital:</strong> {capital.join(', ')}</p>
           </div>
           <div>
-            <p><strong>Top Level Domain:</strong> {tld.join(', ')}</p>
-            <p><strong>Currencies:</strong> {formatCurrencies(Object.values(currencies))}</p>
-            <p><strong>Languages:</strong> {formatLanguages(languages)}</p>
+            <p><strong className={styles['strong']}>Top Level Domain:</strong> {tld.join(', ')}</p>
+            <p><strong className={styles['strong']}>Currencies:</strong> {formatCurrencies(Object.values(currencies))}</p>
+            <p><strong className={styles['strong']}>Languages:</strong> {formatLanguages(languages)}</p>
           </div>
         </div>
       {borders && (
         <div>
           {borders && (
         <div className={styles['border-countries']}>
-          <h3>Border Countries:</h3>
+          <h3><strong className={styles['strong']}>Border Countries:</strong></h3>
           <div className={styles['border-list']}>
           {borders.map((borderCode) => {
               const borderName = countryCodeMapping[borderCode]; 
