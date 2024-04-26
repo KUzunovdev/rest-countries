@@ -10,7 +10,7 @@ interface CountryCardProps {
       name: { common: string };
       population: number;
       region: string;
-      capital: [string];
+      capital: string | string[];
     };
   }
 
@@ -28,6 +28,15 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
     }, [country.population]);
 
 
+     // Function to get the capital if it's an array or a string
+      const getCapital = (capital: string | string[]): string => {
+        if (Array.isArray(capital)) { 
+          return capital[0];
+        }
+        return capital;
+      };
+
+
 
     return (
       <Link href={`/${country.name.common}`} passHref className={styles['link']}>
@@ -39,7 +48,7 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
           <h3 className={styles['country-name']}>{country.name.common}</h3>
           <p className={styles['country-detail']}><strong className={styles['strong']}>Population:</strong>{formattedPopulation}</p>
           <p className={styles['country-detail']}><strong className={styles['strong']}>Region:</strong>{country.region}</p>
-          <p className={styles['country-detail']}><strong className={styles['strong']}>Capital:</strong>{country.capital}</p>
+          <p className={styles['country-detail']}><strong className={styles['strong']}>Capital:</strong>{getCapital(country.capital)}</p>
         </div>
       </div>
     </Link>
