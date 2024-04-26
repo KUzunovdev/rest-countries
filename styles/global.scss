@@ -11,6 +11,17 @@ body{
     margin: 0;
 }
 
+
+body.light {
+    background-color: $color-very-light-gray;
+    color: $color-very-dark-blue-text;
+}
+
+body.dark {
+    background-color: $color-very-dark-blue;
+    color: $color-white;
+}
+
 [data-theme='dark'] {
 
     body{

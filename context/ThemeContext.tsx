@@ -16,6 +16,7 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     const isDark = localStorage.getItem('theme') === 'dark';
     setDark(isDark);
+    updateBodyClass(isDark);
   }, []);
 
 
@@ -23,7 +24,13 @@ export const ThemeProvider = ({ children }) => {
     const isDark = !dark;
     localStorage.setItem('theme', isDark ? 'dark' : 'light'); 
     setDark(isDark);
+    updateBodyClass(isDark);
   };
+
+  const updateBodyClass = (isDark) => {
+    document.body.className = isDark ? 'dark' : 'light';
+  };
+
 
   return (
     <ThemeContext.Provider value={{ dark, toggleDark }}>
