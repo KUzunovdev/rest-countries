@@ -21,11 +21,9 @@ interface CountryCardProps {
 const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
 
 
-    const [formattedPopulation, setFormattedPopulation] = useState('');
-
-    useEffect(() => {
-      setFormattedPopulation(country.population.toLocaleString());
-    }, [country.population]);
+  const formatNumber = (num) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
 
      // Function to get the capital if it's an array or a string
@@ -46,7 +44,7 @@ const CountryCard: React.FC<CountryCardProps> = ({ country }) => {
         </div>
         <div className={styles['country-info-container']}>
           <h3 className={styles['country-name']}>{country.name.common}</h3>
-          <p className={styles['country-detail']}><strong className={styles['strong']}>Population:</strong>{formattedPopulation}</p>
+          <p className={styles['country-detail']}><strong className={styles['strong']}>Population:</strong>{formatNumber(country.population)}</p>
           <p className={styles['country-detail']}><strong className={styles['strong']}>Region:</strong>{country.region}</p>
           <p className={styles['country-detail']}><strong className={styles['strong']}>Capital:</strong>{getCapital(country.capital)}</p>
         </div>

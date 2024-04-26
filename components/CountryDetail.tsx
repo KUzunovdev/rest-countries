@@ -25,6 +25,10 @@ const formatLanguages = (languages) => {
     return Object.values(languages).join(', ');
 };
 
+const formatNumber = (num) => {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
   return (
     <div className={styles['country-detail-container']}> 
       <img src={flags.svg} alt={`Flag of ${name.common}`} className={styles['country-flag']} />
@@ -35,7 +39,7 @@ const formatLanguages = (languages) => {
 
           <div>
             <p><strong className={styles['strong']}>Native Name:</strong> {(Object.values(name.nativeName)[0] as any).common}</p>
-            <p><strong className={styles['strong']}>Population:</strong> {population.toLocaleString()}</p>
+            <p><strong className={styles['strong']}>Population:</strong> {formatNumber(population)}</p>
             <p><strong className={styles['strong']}>Region:</strong> {region}</p>
             <p><strong className={styles['strong']}>Sub Region:</strong> {subregion}</p>
             <p><strong className={styles['strong']}>Capital:</strong> {capital.join(', ')}</p>

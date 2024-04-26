@@ -32,12 +32,14 @@
     
     .search-bar, .region-filter {
       width: 90%; 
+
+      .search-input {
+        min-width: unset; 
+      }
      
     }
   
-    .search-input {
-      min-width: unset; 
-    }
+    
   }
 
   [data-theme='dark'] {

@@ -28,6 +28,11 @@ height: auto;
     display: flex;
     flex-direction: row;
     gap: 6rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2rem;
+  }
 }
 
 .border-countries {
